@@ -2424,6 +2424,11 @@ input, select, textarea {
 		display: inline-block;
 		position: relative;
 	}
+
+	.imagemod img {
+		border-radius: 50%;
+		display: block;
+	}
 /* List */
 
 	ol {
