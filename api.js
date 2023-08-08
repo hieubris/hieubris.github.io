@@ -11,11 +11,11 @@ function handleResult(result) {
     document.getElementById("apiresult") += ret;
 }
 
-var el = document.getElementById("apicall").onclick = fetch(URL)
-                                                    .then(response => {
-                                                        return response.json();
-                                                    }).then(data => {
-                                                        handleResult(data);
-                                                    }).catch(error => {
-                                                        console.log(error);
-                                                    })
+document.getElementById("apicall").onclick = fetch(URL)
+                                            .then(response => {
+                                                return response.json();
+                                            }).then(data => {
+                                                handleResult(data);
+                                            }).catch(error => {
+                                                console.log(error);
+                                            });
