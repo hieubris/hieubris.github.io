@@ -1,16 +1,21 @@
 const URL = "https://datausa.io/api/data?drilldowns=Nation&measures=Population";
 
-
 function handleResult(result) {
-    resultData = JSON.parse(result);
 
-    console.log("handling response");
-    console.log(resultData);
+    let ret = "";
+
+    for (idx in result.data) {
+        ret += `${result.data[idx]['Year']} --- ${result.data[idx]['Population'].toLocaleString(undefined, {minimumFractionDigits: 2})}\n`;
+    }
+
+    document.getElementById("apiresult") += ret;
 }
 
-jQuery.ajax({
-    dataType: "json",
-    method: "GET",
-    url: URL,
-    success: (result) => handleResult(result)
-});
+var el = document.getElementById("apicall").onclick = fetch(URL)
+                                                    .then(response => {
+                                                        return response.json();
+                                                    }).then(data => {
+                                                        handleResult(data);
+                                                    }).catch(error => {
+                                                        console.log(error);
+                                                    })
