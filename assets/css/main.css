@@ -2433,7 +2433,7 @@ input, select, textarea {
 	.imagemod img[src="images/uci.jpg"] {
 		border-radius: 50%;
 		width: 500px;
-		height: auto;
+		height: 500px;
 	}
 /* List */
 
