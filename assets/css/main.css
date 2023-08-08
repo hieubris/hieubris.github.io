@@ -3801,6 +3801,7 @@ input, select, textarea {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	float: left;
 }
 
 #back img {
