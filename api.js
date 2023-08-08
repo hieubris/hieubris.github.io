@@ -2,13 +2,18 @@ const URL = "https://datausa.io/api/data?drilldowns=Nation&measures=Population";
 
 function handleResult(result) {
 
-    let ret = "";
+    let table = document.getElementById('apitable').getElementsByTagName('tbody')[0];
 
     for (idx in result.data) {
-        ret += `${result.data[idx]['Year']} --- ${result.data[idx]['Population'].toLocaleString(undefined, {minimumFractionDigits: 2})}\n`;
+        let row = table.insertRow();
+        let yearCell = row.insertCell(0);
+        let popCell = row.insertCell(1);
+
+        yearCell.innerHTML = result.data[idx]['Year'];
+        popCell.innerHTML = result.data[idx]['Population'].toLocaleString(undefined, {minimumFractionDigits: 2});
     }
 
-    document.getElementById("apiresult").innerHTML = ret;
+    document.getElementById("apitable").style.visibility = "visible";
 }
 
 function getData() {

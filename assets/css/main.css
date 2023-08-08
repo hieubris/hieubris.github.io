@@ -3791,3 +3791,8 @@ input, select, textarea {
 			}
 
 		}
+
+/* Additional */
+.hidden {
+	visibility: hidden;
+}
