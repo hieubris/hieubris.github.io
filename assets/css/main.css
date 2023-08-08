@@ -2419,7 +2419,7 @@ input, select, textarea {
 	}
 
 	.image img[src="images/uci.jpg"] {
-		max-width: 70%;
+		max-width: 100%;
 		height: auto;
 	}
 
