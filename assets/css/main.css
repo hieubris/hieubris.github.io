@@ -3798,6 +3798,11 @@ input, select, textarea {
 }
 
 #back {
-	display: inline;
-	float: left;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#back img {
+	filter: invert(100%);
 }
