@@ -55,3 +55,5 @@ function handleResult(data) {
     document.getElementById("wind").innerHTML = wind;
     document.getElementById("pressure").innerHTML = pressure;
 }
+
+document.getElementById("weatherbutton").onsubmit = handleCityName;
