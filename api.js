@@ -8,10 +8,9 @@ function handleResult(result) {
     console.log(resultData);
 }
 
-$(document).ready(function() {
-    $.ajax({
-        url: URL,
-        type: "GET",
-        success: (result) => handleResult(result)
-    })
-})
+jQuery.ajax({
+    dataType: "json",
+    method: "GET",
+    url: URL,
+    success: (result) => handleResult(result)
+});
