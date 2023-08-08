@@ -2418,7 +2418,7 @@ input, select, textarea {
 		border-radius: 50%;
 	}
 
-	.image img[src="images/uci.jpg"] {
+	.imagemod img[src="images/uci.jpg"] {
 		width: auto;
 		height: auto;
 		max-width: 384px;
