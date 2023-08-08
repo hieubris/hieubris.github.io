@@ -3802,8 +3802,32 @@ input, select, textarea {
 	align-items: center;
 	justify-content: center;
 	float: left;
+	padding-top: 12vh;
 }
 
 #back img {
 	filter: invert(100%);
+}
+
+#back img:hover {
+	filter: opacity(15%);
+}
+
+#back img:active {
+	filter: contrast(30%);
+}
+
+#weathertextfield {
+	width: 600px;
+}
+
+.weatherapiresult {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.weatherlist li {
+	display: inline;
 }

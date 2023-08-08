@@ -2,8 +2,7 @@ require('dotenv').config();
 
 var apiKey = process.env.WEATHER_API_KEY;
 
-function handleCityName() {
-    let city = "Anaheim";
+function handleCityName(city) {
     let url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
     let fetchRes = fetch(url);
 
@@ -46,15 +45,18 @@ function handleResult(data) {
     let highTemp = data.main['temp_max']; // highest temp for the day
     let iconURL = `https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png`;
 
-    console.log(`Name: ${cityName}\n \
-                 Humidity: ${humidity}%\n
-                 Wind Speed: ${wind} mph\n
-                 Pressure: ${pressure} hPa\n
-                 Temperature ${temp}\n
-                 Low: ${lowTemp}\n
-                 High: ${highTemp}\n
-                 Icon: ${iconURL}`);
+    document.getElementById("cityname").innerHTML = cityName;
+    document.getElementById("weathericon").innerHTML = iconURL;
+    document.getElementById("temp").innerHTML = temp;
+    document.getElementById("lowtemp").innerHTML = lowTemp;
+    document.getElementById("hightemp").innerHTML = highTemp;
+    document.getElementById("humidity").innerHTML = humidity;
+    document.getElementById("wind").innerHTML = wind;
+    document.getElementById("pressure").innerHTML = pressure;
 }
 
-
-handleCityName();
+document.getElementById("weatherbutton").addEventListener("submit", function(e) {
+    e.preventDefault();
+    var cityName = document.getElementById("weathertextfield").value;
+    handleCityName(cityName);
+})
