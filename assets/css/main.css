@@ -2423,6 +2423,7 @@ input, select, textarea {
 		height: auto;
 		max-width: 384px;
 		max-height: 384px;
+		border-radius: 50%;
 	}
 
 /* List */
