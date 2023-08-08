@@ -1,4 +1,4 @@
-const URL = 'https://datausa.io/api/data?drilldowns=Nation&measures=Population';
+const URL = "https://datausa.io/api/data?drilldowns=Nation&measures=Population";
 
 
 function handleResult(result) {
