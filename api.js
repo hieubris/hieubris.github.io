@@ -2,6 +2,8 @@ const URL = "https://datausa.io/api/data?drilldowns=Nation&measures=Population";
 
 function handleResult(result) {
 
+    document.getElementById("apipar").innerHTML = "U.S Census data over the past several years!";
+
     let table = document.getElementById('apitable').getElementsByTagName('tbody')[0];
 
     for (idx in result.data) {
@@ -14,6 +16,7 @@ function handleResult(result) {
     }
 
     document.getElementById("apitable").style.visibility = "visible";
+    document.getElementById("apicall").style.visibility = "hidden";
 }
 
 function getData() {
