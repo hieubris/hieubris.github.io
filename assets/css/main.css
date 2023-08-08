@@ -2417,24 +2417,7 @@ input, select, textarea {
 	.image img[src="images/profilepic.jpg"] {
 		border-radius: 50%;
 	}
-
-	.imagemod {
-		border-radius: 50%;
-		border: 0;
-		display: inline-block;
-		position: relative;
-	}
-
-	.imagemod img {
-		border-radius: 50%;
-		display: block;
-	}
-
-	.imagemod img[src="images/uci.jpg"] {
-		border-radius: 50%;
-		width: 500px;
-		height: 500px;
-	}
+	
 /* List */
 
 	ol {
