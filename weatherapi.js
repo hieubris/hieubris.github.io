@@ -46,7 +46,7 @@ function handleResult(data) {
     let highTemp = data.main['temp_max']; // highest temp for the day
     let iconURL = `https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png`;
 
-    console.log(`Name: ${cityName}\n
+    console.log(`Name: ${cityName}\n \
                  Humidity: ${humidity}%\n
                  Wind Speed: ${wind} mph\n
                  Pressure: ${pressure} hPa\n

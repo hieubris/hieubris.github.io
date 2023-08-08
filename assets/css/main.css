@@ -3798,10 +3798,6 @@ input, select, textarea {
 }
 
 #back {
-	width: auto;
-	height: auto;
-	max-width: 50px;
-	max-height: 50px;
 	display: inline;
 	float: left;
 }
