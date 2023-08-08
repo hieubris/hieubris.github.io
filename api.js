@@ -1,8 +1,17 @@
 const URL = 'https://datausa.io/api/data?drilldowns=Nation&measures=Population';
 
-var request = new XMLHttpRequest();
-request.open('GET', URL);
-request.send();
-request.onload = ()=> {
-    console.log(JSON.parse(request.reponse));
+
+function handleResult(result) {
+    resultData = JSON.parse(result);
+
+    console.log("handling response");
+    console.log(resultData);
 }
+
+$(document).ready(function() {
+    $.ajax({
+        url: URL,
+        type: "GET",
+        success: (result) => handleResult(result)
+    })
+})
