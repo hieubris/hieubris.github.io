@@ -2417,7 +2417,14 @@ input, select, textarea {
 	.image img[src="images/profilepic.jpg"] {
 		border-radius: 50%;
 	}
-	
+
+	.image img[src="images/uci.jpg"] {
+		width: auto;
+		height: auto;
+		max-width: 384px;
+		max-height: 384px;
+	}
+
 /* List */
 
 	ol {
