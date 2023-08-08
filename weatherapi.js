@@ -2,7 +2,8 @@ require('dotenv').config();
 
 var apiKey = process.env.WEATHER_API_KEY;
 
-function handleCityName(city) {
+function handleCityName() {
+    let city = document.getElementById("weathertextfield").value;
     let url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
     let fetchRes = fetch(url);
 
@@ -54,9 +55,3 @@ function handleResult(data) {
     document.getElementById("wind").innerHTML = wind;
     document.getElementById("pressure").innerHTML = pressure;
 }
-
-document.getElementById("weatherbutton").addEventListener("submit", function(e) {
-    e.preventDefault();
-    var cityName = document.getElementById("weathertextfield").value;
-    handleCityName(cityName);
-})

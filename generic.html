@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Generic - Stellar by HTML5 UP</title>
+		<title>Weather API</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -33,8 +33,8 @@
 								<form method="post" action="#">
 									<div class="col-12">
 										<ul class="actions">
-											<li id="weathertextfield"><input type="text" name="demo-name" value="" placeholder="City Name" /></li>
-											<li id="weatherbutton"><input type="reset" value="Enter" /></li>
+											<li><input type="text" name="demo-name" value="" placeholder="City Name" id="weathertextfield"/></li>
+											<li><input type="submit" value="Enter" id="weatherbutton" onsubmit="handleCityName()"/></li>
 										</ul>
 									</div>
 								</form>
