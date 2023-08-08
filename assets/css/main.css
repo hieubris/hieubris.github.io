@@ -2414,6 +2414,10 @@ input, select, textarea {
 				width: 100%;
 			}
 
+	.image img[src="images/profilepic.jpg"] {
+		border-radius: 50%;
+	}
+
 /* List */
 
 	ol {
