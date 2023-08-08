@@ -2418,12 +2418,63 @@ input, select, textarea {
 		border-radius: 50%;
 	}
 
+	.imagemod {
+		border-radius: 8px;
+		border: 0;
+		display: inline-block;
+		position: relative;
+	}
+
+	.imagemod img {
+		border-radius: 50%;
+		display: block;
+	}
+
+	.imagemod.left, .imagemod.right {
+		max-width: 40%;
+	}
+
+		.imagemod.left img, .imagemod.right img {
+			width: 100%;
+		}
+
+	.imagemod.left {
+		float: left;
+		margin: 0 1.5em 1em 0;
+		top: 0.25em;
+	}
+
+	.imagemod.right {
+		float: right;
+		margin: 0 0 1em 1.5em;
+		top: 0.25em;
+	}
+
+	.imagemod.fit {
+		display: block;
+		margin: 0 0 2em 0;
+		width: 100%;
+	}
+
+		.imagemod.fit img {
+			width: 100%;
+		}
+
+	.imagemod.main {
+		display: block;
+		margin: 0 0 3em 0;
+		width: 100%;
+	}
+
+		.imagemod.main img {
+			width: 100%;
+		}
+
 	.imagemod img[src="images/uci.jpg"] {
 		width: auto;
 		height: auto;
 		max-width: 384px;
 		max-height: 384px;
-		border-radius: 50%;
 	}
 
 /* List */
