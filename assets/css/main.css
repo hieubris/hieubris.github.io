@@ -2418,9 +2418,12 @@ input, select, textarea {
 		border-radius: 50%;
 	}
 
-	/*.image img[src="images/uci.jpg"] {
-	} */
-
+	.imagemod {
+		border-radius: 50%;
+		border: 0;
+		display: inline-block;
+		position: relative;
+	}
 /* List */
 
 	ol {
