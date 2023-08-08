@@ -2429,6 +2429,12 @@ input, select, textarea {
 		border-radius: 50%;
 		display: block;
 	}
+
+	.imagemod img[src="images/uci.jpg"] {
+		border-radius: 50%;
+		width: 500px;
+		height: auto;
+	}
 /* List */
 
 	ol {
