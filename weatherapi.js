@@ -65,13 +65,7 @@ function handleResult(data) {
 function submitForm(formSubmitEvent) {
     console.log('submit event successful')
     formSubmitEvent.preventDefault();
-    let cityName = $("#weathertextfield").serialize();
-    handleCityName(cityName);
+    handleCityName( $('#weatherform').serialize() );
 }
 
-
-$('#weatherform').submit(function (event) {
-    event.preventDefault();
-    submitForm(event);
-    return false;
-});
+$('#weatherform').submit((event) => submitForm(event));
