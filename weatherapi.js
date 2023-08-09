@@ -1,9 +1,12 @@
 require('dotenv').config();
+const jsdom = require('jsdom');
+const { JSDOM } = jsdom;
+const jquery = require('jquery')(new jsdom.JSDOM().window);
+const $ = jquery;
 
 var apiKey = process.env.WEATHER_API_KEY;
 
-function handleCityName() {
-    let city = document.getElementById("weathertextfield").value;
+function handleCityName(city) {
     let url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
     let fetchRes = fetch(url);
 
@@ -14,6 +17,7 @@ function handleCityName() {
     }).catch(error => {
         console.log(error);
     });
+    console.log('going through first function');
 }
 
 
@@ -33,6 +37,7 @@ function handleWeatherData(data) {
     }).catch(error => {
         console.log(error);
     });
+    console.log('going through second function');
 }
 
 
@@ -54,6 +59,19 @@ function handleResult(data) {
     document.getElementById("humidity").innerHTML = humidity;
     document.getElementById("wind").innerHTML = wind;
     document.getElementById("pressure").innerHTML = pressure;
+    console.log('going through final function');
 }
 
-document.getElementById("weatherbutton").onsubmit = handleCityName;
+function submitForm(formSubmitEvent) {
+    console.log('submit event successful')
+    formSubmitEvent.preventDefault();
+    let cityName = $("#weathertextfield").serialize();
+    handleCityName(cityName);
+}
+
+
+$('#weatherform').submit(function (event) {
+    event.preventDefault();
+    submitForm(event);
+    return false;
+});
