@@ -7,17 +7,25 @@ const $ = jquery;
 var apiKey = process.env.WEATHER_API_KEY;
 
 function handleCityName(city) {
-    let url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
-    let fetchRes = fetch(url);
 
-    fetchRes.then(res => {
-        return res.json();
-    }).then(data => {
-        handleWeatherData(data);
-    }).catch(error => {
-        console.log(error);
-    });
-    console.log('going through first function');
+    resultDataJson = JSON.parse(city);
+
+    if (resultDataJson["status"] === "success") {
+        let url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
+        let fetchRes = fetch(url);
+
+        fetchRes.then(res => {
+            return res.json();
+        }).then(data => {
+            handleWeatherData(data);
+        }).catch(error => {
+            console.log(error);
+        });
+        console.log('going through first function');
+    } else {
+        console.log("show error message");
+        console.log(resultDataJson["message"]);
+    }
 }
 
 
@@ -63,9 +71,13 @@ function handleResult(data) {
 }
 
 function submitForm(formSubmitEvent) {
-    console.log('submit event successful')
     formSubmitEvent.preventDefault();
-    handleCityName( $('#weatherform').serialize() );
+
+    $.post(
+        "api/login",
+        $("#weatherform").serialize(),
+        (result) => handleCityName(result)
+    );
 }
 
 $('#weatherform').submit((event) => submitForm(event));
